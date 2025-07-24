@@ -64,43 +64,67 @@ HooBank_Mern/
 HooBank – Modern MERN Online Banking App 🚀
 Welcome to HooBank, a full-stack demo banking platform powered by the MERN stack (MongoDB, Express.js, React.js, Node.js). The project demonstrates secure authentication, responsive design, interactive charts, and a robust REST API—everything you need to explore how a real-world online-banking system is built.
 
-✨ Key Features
-Layer	Highlights
-Frontend (React + Tailwind CSS)	• 100 % responsive layout
-• Clean, accessible UI
-• Custom modal dialogs (no default alerts)
-• Persistent JWT login
-• Dashboard with balance, owner, transaction count
-• Transaction table (date, type, amount, ref)
-• Spending-analysis charts via Recharts
-Backend (Node + Express)	• RESTful API (versioned routes)
-• JWT authentication & role-based guards
-• Password & PIN hashing with bcryptjs
-• Account lock-out after repeated failures
-• Centralised error handler with friendly JSON responses
-• Seed script for instant demo data
-Database (MongoDB + Mongoose)	• Schemas for Users, Accounts, Transactions
-• Virtuals & middleware for hashing sensitive fields
-• Config-driven connection (local or Atlas)
+## ✨ Key Features
+### Layer	Highlights
+#### Frontend (React + Tailwind CSS)
+-  100 % responsive layout
+-  Clean, accessible UI
+-  Custom modal dialogs (no default alerts)
+-  Persistent JWT login
+-  Dashboard with balance, owner, transaction count
+-  Transaction table (date, type, amount, ref)
+-  Spending-analysis charts via Recharts
+### Backend (Node + Express)	
+-  RESTful API (versioned routes)
+-  JWT authentication & role-based guards
+-  Password & PIN hashing with bcryptjs
+-  Account lock-out after repeated failures
+-  Centralised error handler with friendly JSON responses
+-  Seed script for instant demo data
+### Database (MongoDB + Mongoose)	
+-  Schemas for Users, Accounts, Transactions
+-  Virtuals & middleware for hashing sensitive fields
+-  Config-driven connection (local or Atlas)
 🖥️ Local Demo Credentials
 After running the seed script you can:
 
-Purpose	Account #	Debit PIN	Email	Password
-Demo login	1234567890	1234	demo@example.com	password123
-Signup sample	9876543210	5678	(choose one)	(choose one)
+
 ⚙️ Prerequisites
 Node.js (LTS) & npm or Yarn
 
-MongoDB Community Server or MongoDB Atlas cluster
+# Signup and Login Process
 
-🚀 Quick Start
-bash
-# 1 – clone
-git clone https://github.com/Afreed007/HooBank_Mern.git
-cd HooBank_Mern
+## Signup Process
+1. Users enter their **Account Number** and **Debit PIN** on the registration form.
+2. The system verifies these credentials.
+3. If the account number and PIN match an existing record, the user is prompted to set an **Email** and **Password**.
+4. The **Email** and **Password** are then stored future logins.
+5. The user is successfully registered.
 
-# 2 – backend
-cd banking-app-backend
-npm install      # or yarn
-cp .env.example .env   # then edit values (see below)
-npm run seed     # ⬆️ populat
+## Login Process
+1. Users enter their registered **Email** and **Password**.
+2. The system verifies these credentials.
+3. If the credentials match, the user is granted access to the dashboard.
+4. The dashboard displays account details and transaction history.
+
+**Example `users` Structure:**
+```json
+{
+  "1001": {
+    "accountNumber": "01234567890",
+    "debitPin": "1234",
+    "email": "demo@example.com",
+    "password": "password123",
+    
+  },
+  "1002": {
+    "accountNumber": "1234567890",
+    "debitPin": "5678",
+    "email": "",
+    "password": "",
+    "transactions": []
+  }
+}
+```
+
+---
