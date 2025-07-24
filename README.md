@@ -85,14 +85,9 @@ Welcome to HooBank, a full-stack demo banking platform powered by the MERN stack
 -  Schemas for Users, Accounts, Transactions
 -  Virtuals & middleware for hashing sensitive fields
 -  Config-driven connection (local or Atlas)
-🖥️ Local Demo Credentials
+# 🖥️ Local Demo Credentials
 After running the seed script you can:
-
-
-⚙️ Prerequisites
-Node.js (LTS) & npm or Yarn
-
-# Signup and Login Process
+## Signup and Login 
 
 ## Signup Process
 1. Users enter their **Account Number** and **Debit PIN** on the registration form.
